@@ -1,0 +1,10 @@
+MOTOLUCRO — PRIMEIRA VERSÃO PWA
+
+1. Extraia o arquivo ZIP.
+2. Publique todos os arquivos da pasta motolucro em um serviço de hospedagem estática HTTPS (por exemplo Netlify Drop, Cloudflare Pages ou GitHub Pages).
+3. Abra o endereço HTTPS no Chrome do Android. No menu do Chrome, toque em Instalar app ou Adicionar à tela inicial.
+4. Em Ajustes, informe o aluguel da WAGGO (semanal ou mensal) e a meta de lucro.
+5. Registre ganhos e gastos todos os dias. Os dados ficam no armazenamento local do navegador do aparelho.
+6. Use Histórico > Baixar backup JSON com frequência e guarde uma cópia fora do celular. Para trocar de aparelho, use Restaurar backup JSON.
+
+ATENÇÃO: Abrir index.html diretamente como arquivo não permite instalar o PWA. É necessário hospedagem HTTPS. Limpar dados do navegador ou perder o aparelho pode apagar registros sem backup. Esta versão não sincroniza dados entre dispositivos. Os custos do aluguel são provisionados mensalmente, e pagamentos efetivos são registrados separadamente para evitar dupla contagem. Não inclui cálculo automático de impostos.

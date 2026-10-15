@@ -1,0 +1,1 @@
+{"name":"MotoLucro — Controle do Entregador","short_name":"MotoLucro","description":"Ganhos, despesas, aluguel e lucro do entregador","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#f3f6f2","theme_color":"#132b24","lang":"pt-BR","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
