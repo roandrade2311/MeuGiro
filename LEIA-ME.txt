@@ -1,10 +1,19 @@
-MOTOLUCRO — PRIMEIRA VERSÃO PWA
+MEUGIRO v2 — PWA com login real e sincronização pelo Supabase
 
-1. Extraia o arquivo ZIP.
-2. Publique todos os arquivos da pasta motolucro em um serviço de hospedagem estática HTTPS (por exemplo Netlify Drop, Cloudflare Pages ou GitHub Pages).
-3. Abra o endereço HTTPS no Chrome do Android. No menu do Chrome, toque em Instalar app ou Adicionar à tela inicial.
-4. Em Ajustes, informe o aluguel da WAGGO (semanal ou mensal) e a meta de lucro.
-5. Registre ganhos e gastos todos os dias. Os dados ficam no armazenamento local do navegador do aparelho.
-6. Use Histórico > Baixar backup JSON com frequência e guarde uma cópia fora do celular. Para trocar de aparelho, use Restaurar backup JSON.
+1. Crie um projeto em https://supabase.com/dashboard
+2. No SQL Editor, execute supabase.sql (somente uma vez em projeto novo).
+3. Authentication > Providers > Email: habilite login por e-mail. Para contas controladas pelo administrador, desabilite novos cadastros públicos e crie os dois usuários em Authentication > Users > Add user. Escolha senhas fortes e individuais; se usar convite, confirme a conta pelo e-mail.
+4. No Supabase, Project Settings > API (ou Connect), copie Project URL e chave pública publishable/anon. Insira em config.js. NUNCA use secret/service_role no frontend.
+5. Em Authentication > Users, copie os UUIDs do seu usuário e do entregador. Execute no SQL Editor os dois comandos finais comentados em supabase.sql, substituindo os UUIDs. Faça isso somente com autorização do entregador.
+6. No GitHub, envie todos os arquivos da pasta MeuGiro_PWA para a RAIZ do repositório (não envie o ZIP nem o arquivo supabase.sql ao site se preferir mantê-lo privado). Ative Pages > main > /(root).
+7. Abra o link HTTPS no Chrome Android, entre com e-mail e senha e use Instalar app.
+8. Se renomear o repositório de MotoLucro para MeuGiro, o endereço muda. Confira Settings > Pages.
 
-ATENÇÃO: Abrir index.html diretamente como arquivo não permite instalar o PWA. É necessário hospedagem HTTPS. Limpar dados do navegador ou perder o aparelho pode apagar registros sem backup. Esta versão não sincroniza dados entre dispositivos. Os custos do aluguel são provisionados mensalmente, e pagamentos efetivos são registrados separadamente para evitar dupla contagem. Não inclui cálculo automático de impostos.
+SEGURANÇA E LIMITAÇÕES:
+- Administrador tem acesso de leitura somente ao entregador autorizado, por regras RLS.
+- Não há cadastro aberto no app. O administrador cria as contas pelo Supabase.
+- O app precisa de internet para login e sincronização. Não faça lançamentos offline nesta versão.
+- O registro do entregador é salvo no Supabase. Faça backups JSON regularmente.
+- A primeira importação de dados antigos do MotoLucro é oferecida apenas no mesmo navegador, se existirem.
+- Não altere os mesmos dados em dois dispositivos simultaneamente: a última gravação prevalece.
+- Recuperação de senha: Supabase Auth deve ser configurado com URLs de redirecionamento e fluxo de atualização de senha antes de habilitar esse recurso em produção.
